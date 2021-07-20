@@ -40,10 +40,20 @@ function Lista() {
   );
 }
 
+function Header() {
+  return <div className='header'>Header</div>;
+}
+
+function Footer() {
+  return <div className='footer'>Footer</div>;
+}
+
 function App() {
   return (
     <div>
+      <Header />
       <Lista />
+      <Footer />
     </div>
   );
 }
