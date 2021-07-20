@@ -10,10 +10,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.header {
+.header,
+.footer {
   background: #2f4d90;
+  color: #ffffff;
   padding: 20px;
+}
+
+.header {
   font-size: 28px;
+}
+
+.footer {
+  font-size: 14px;
 }
 
 .lista {
@@ -30,4 +39,6 @@ code {
   margin: 20px;
   border-radius: 6px;
   box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  border-top: 4px solid #2f4d90;
+  border-bottom: 4px solid #2f4d90;
 }
