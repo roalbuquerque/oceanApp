@@ -41,7 +41,11 @@ function Lista() {
 }
 
 function Header() {
-  return <div className='header'>Header</div>;
+  return (
+    <div className='header'>
+      <img src='https://www.oceanbrasil.com/img/general/logoOceanI.png' alt='Samsung Ocean' width='300' />
+    </div>
+  );
 }
 
 function Footer() {
