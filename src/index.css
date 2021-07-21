@@ -50,3 +50,10 @@ code {
   border-left: 4px solid #2f4d90;
   padding-left: 8px;
 }
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
