@@ -32,11 +32,10 @@ const lista = [
 ];
 
 function Item(props) {
-  const indice = props.indice;
-  const item = lista[indice];
+  const item = props.item;
 
   return (
-    <a href={'/visualizar/' + indice}>
+    <a href={'/visualizar/' + item._id}>
       <div className='item'>
         <h1 className='item__title'>{item.nome}</h1>
         <img src={item.imageUrl} alt={item.nome} width='200'></img>
@@ -55,7 +54,9 @@ function Lista() {
   useEffect(() => {
     console.log({ listaResultadoApi });
 
-    obterResultado();
+    if (!listaResultadoApi) {
+      obterResultado();
+    }
   });
 
   // Declaramos a função para obter resultados
@@ -74,12 +75,17 @@ function Lista() {
     const dados = await resultado.json();
 
     console.log({ dados });
+    atualizarListaResultadoApi(dados);
   };
+
+  if (!listaResultadoApi) {
+    return <div>Carregando...</div>;
+  }
 
   return (
     <div className='lista'>
-      {lista.map((item, index) => (
-        <Item indice={index} key={index} />
+      {listaResultadoApi.map((item, index) => (
+        <Item item={item} key={index} />
       ))}
     </div>
   );
