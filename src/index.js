@@ -58,7 +58,9 @@ function Lista() {
 function Header() {
   return (
     <header className='header'>
-      <img src='https://www.oceanbrasil.com/img/general/logoOceanI.png' alt='Samsung Ocean' width='300' />
+      <a href='/'>
+        <img src='https://www.oceanbrasil.com/img/general/logoOceanI.png' alt='Samsung Ocean' width='300' />
+      </a>
     </header>
   );
 }
