@@ -23,8 +23,7 @@ function Item(props) {
 
   return (
     <div className='item'>
-      {item.nome}
-      <br />
+      <h1 className='item__title'>{item.nome}</h1>
       <img src={item.imageUrl} alt={item.nome} width='200'></img>
     </div>
   );
