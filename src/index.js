@@ -5,16 +5,29 @@ import './index.css';
 
 const lista = [
   {
-    id: 0,
-    nome: 'Golden Retriever',
-    imageUrl:
-      'https://static.wixstatic.com/media/db516d_a7f7619f878f4c29948251d50d7f8de9~mv2.jpg/v1/fill/w_569,h_512,al_c,lg_1,q_80,usm_1.20_1.00_0.01/db516d_a7f7619f878f4c29948251d50d7f8de9~mv2.webp',
+    id: 1,
+    nome: 'Pinscher',
+    imageUrl: 'https://pbs.twimg.com/media/Da3FmbSWkAEuwUJ.jpg',
   },
   {
-    id: 1,
+    id: 2,
+    nome: 'Golden Retriever',
+    imageUrl: 'https://f.i.uol.com.br/fotografia/2017/10/27/150912457859f369e28eaa5_1509124578_3x2_md.jpg',
+  },
+  {
+    id: 3,
     nome: 'Labrador',
-    imageUrl:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAY-2Y-wO9bl9AibZsnHTcJz_Wi5tzkKuKKqZaXno8xy6SS2A2JQYeMOwshFSfZ1DNPBY&usqp=CAU',
+    imageUrl: 'https://www.clubeparacachorros.com.br/wp-content/uploads/2014/07/labrador-amarelo.jpg',
+  },
+  {
+    id: 4,
+    nome: 'Yorkshire',
+    imageUrl: 'https://www.petlove.com.br/images/breeds/192471/profile/original/yorkshire-p.jpg?1532539683',
+  },
+  {
+    id: 5,
+    nome: 'Husky Siberiano',
+    imageUrl: 'https://www.petlove.com.br/images/breeds/193082/profile/original/husky_siberian-p.jpg?1532539123',
   },
 ];
 
