@@ -86,9 +86,28 @@ function ListarItens() {
 }
 
 function VisualizarItem(props) {
+  const id = props.match.params.id;
+
+  /* 
+  Fazer uma nova requisição
+  Usar o fetch
+  async/await */
+
+  const [item, setItem] = useState('');
+
+  useEffect(() => {
+    if (!item) {
+      getItemData();
+    }
+  });
+
+  const getItemData = async () => {
+    console.log('Get Item Data', id);
+  };
+
   return (
     <div>
-      <Item indice={props.match.params.id} />
+      <Item item={item} />
     </div>
   );
 }
@@ -99,6 +118,7 @@ function App() {
       <Header />
       <Switch>
         <Route path='/' exact={true} component={ListarItens} />
+
         <Route path='/visualizar/:id' component={VisualizarItem} />
       </Switch>
       <Footer />
