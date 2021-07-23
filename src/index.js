@@ -69,6 +69,7 @@ function Header() {
       <a href='/'>
         <img src='https://www.oceanbrasil.com/img/general/logoOceanI.png' alt='Samsung Ocean' width='300' />
       </a>
+      <a href='/adicionar'>Adicionar item</a>
     </header>
   );
 }
@@ -124,22 +125,57 @@ function VisualizarItem(props) {
   );
 }
 
-function adicionarItem() {
-  const handleSubmit = (event) => {
+function adicionarItem(props) {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log(event.target);
+    const nome = event.target.nome.value;
+    const imagemUrl = event.target.imagemUrl.value;
+
+    const dados = {
+      nome,
+      imagemUrl,
+    };
+
+    const dadosEmJson = JSON.stringify(dados);
+
+    /*
+      fetchtão
+      async/await
+      route nova?
+      Como fazer ser verbo POST? Porque até então a gente só tinha get
+      já temos o JSON. passar "dados na URL"
+
+    
+    */
+
+    const resultado = await fetch('https://backend-flexivel.herokuapp.com/', {
+      headers: new Headers({
+        'Authorization': 'profpaulo.salvatore@gmail.com',
+        'Content-Type': 'application/json',
+      }),
+      method: 'POST',
+      body: dadosEmJson,
+    });
+
+    console.log(resultado);
+
+    const jsonResultado = await resultado.json();
+
+    console.log(jsonResultado);
+
+    props.history.push('/visualizar/' + jsonResultado._id);
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor='nome'>Nome:</label>
-        <input type='text' id='nome' />
+        <input type='text' id='nome' name='nome' />
         <br />
 
         <label htmlFor='imagemUrl'>URL da Imagem</label>
-        <input type='text' id='imagemUrl' />
+        <input type='text' id='imagemUrl' name='imagemUrl' />
         <br />
 
         <input type='submit' value='Adicionar' />
