@@ -89,9 +89,11 @@ function VisualizarItem(props) {
   const id = props.match.params.id;
 
   /* 
+  useState e useEffect
   Fazer uma nova requisição
   Usar o fetch
-  async/await */
+  async/await 
+  */
 
   const [item, setItem] = useState('');
 
@@ -103,6 +105,16 @@ function VisualizarItem(props) {
 
   const getItemData = async () => {
     console.log('Get Item Data', id);
+
+    const resultado = await fetch('https://backend-flexivel.herokuapp.com/' + id, {
+      headers: new Headers({
+        Authorization: 'profpaulo.salvatore@gmail.com',
+      }),
+    });
+
+    const dados = await resultado.json();
+
+    setItem(dados);
   };
 
   return (
