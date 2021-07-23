@@ -125,9 +125,15 @@ function VisualizarItem(props) {
 }
 
 function adicionarItem() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log(event.target);
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor='nome'>Nome:</label>
         <input type='text' id='nome' />
         <br />
